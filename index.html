@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Google Tag Manager</title>
+    <script>
+        // Insira o código do Google Tag Manager aqui
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teste de Eventos do Google Tag Manager</h1>
+    <button id="botao1">Clique aqui</button>
+    <button id="botao2">Enviar Formulário</button>
+    
+    <script>
+        document.getElementById('botao1').addEventListener('click', function() {
+            console.log('Botão 1 clicado');
+            dataLayer.push({'event': 'botao1_clicado'});
+        });
+        
+        document.getElementById('botao2').addEventListener('click', function() {
+            console.log('Botão 2 clicado');
+            dataLayer.push({'event': 'formulario_enviado'});
+        });
+    </script>
+</body>
+</html>
