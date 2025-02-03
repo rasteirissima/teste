@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste Google Tag Manager</title>
-   <!-- Google Tag Manager -->
+     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PCL5KQS8');</script>
 <!-- End Google Tag Manager -->
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Google Tag Manager</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 50px;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
         }
         button {
             padding: 10px 20px;
@@ -23,17 +27,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             margin: 10px;
             cursor: pointer;
         }
+        .content {
+            height: 2000px;
+            background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
+   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCL5KQS8"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-    
+  
     <h1>Teste de Eventos do Google Tag Manager</h1>
     <button id="botao1">Clique aqui</button>
     <button id="botao2">Enviar Formulário</button>
+    
+    <div class="content">
+        <h2>Seção 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel varius dolor. Donec venenatis, neque a imperdiet sodales, ligula nulla luctus magna, eget bibendum mauris neque ut justo.</p>
+        <h2>Seção 2</h2>
+        <p>Sed quis lectus vitae orci fermentum vehicula. In hac habitasse platea dictumst. Nulla facilisi. Suspendisse potenti. Vivamus at turpis sit amet nulla egestas scelerisque.</p>
+        <h2>Seção 3</h2>
+        <p>Maecenas at nulla ac augue facilisis faucibus. Donec volutpat dapibus libero, at malesuada justo elementum in. Ut consequat lacus et libero pharetra, ac egestas justo tristique.</p>
+    </div>
     
     <script>
         document.getElementById('botao1').addEventListener('click', function() {
