@@ -43,7 +43,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1>Teste de Eventos do Google Tag Manager</h1>
     <button id="botao1">Clique aqui</button>
     <button id="botao2">Enviar Formulário</button>
-    
+    <button id="botao3">Comprar Produto</button>
     <div class="content">
         <h2>Seção 1</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel varius dolor. Donec venenatis, neque a imperdiet sodales, ligula nulla luctus magna, eget bibendum mauris neque ut justo.</p>
@@ -58,7 +58,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             console.log('Botão 1 clicado');
             dataLayer.push({'event': 'botao1_clicado'});
         });
-        
+    document.getElementById('botao3').addEventListener('click', function() {
+            console.log('Botão 3 clicado');
+            window.dataLayer.push({
+  event: "add_to_cart",
+  ecommerce: {
+    currency: "BRL",
+    value: 150.00,
+    items: [
+      {
+        item_name: "FLAT RASTEIRISSIMA",
+        item_id: "00000001",
+        price: 150.00,
+        quantity: 2
+      }
+    ]
+  }
+});
+        });
         document.getElementById('botao2').addEventListener('click', function() {
             console.log('Botão 2 clicado');
             dataLayer.push({'event': 'formulario_enviado'});
