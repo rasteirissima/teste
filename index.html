@@ -1,84 +1,65 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PCL5KQS8');</script>
-<!-- End Google Tag Manager -->
-  
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        // Substitua G-XXXXXXXXXX pelo seu ID de medição
+        gtag('config', 'G-XMX0H8WZK7');
+        </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste Google Tag Manager</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            max-width: 800px;
-            margin: auto;
-            line-height: 1.6;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin: 10px;
-            cursor: pointer;
-        }
-        .content {
-            height: 2000px;
-            background: linear-gradient(to bottom, #ffffff, #f0f0f0);
-            padding: 20px;
-        }
-    </style>
+    <title>TESTE GTAG</title>
 </head>
 <body>
-   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCL5KQS8"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  
-    <h1>Teste de Eventos do Google Tag Manager</h1>
-    <button id="botao1">Clique aqui</button>
-    <button id="botao2">Enviar Formulário</button>
-    <button id="botao3">Adicione ao carrinho</button>
-    <div class="content">
-        <h2>Seção 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel varius dolor. Donec venenatis, neque a imperdiet sodales, ligula nulla luctus magna, eget bibendum mauris neque ut justo.</p>
-        <h2>Seção 2</h2>
-        <p>Sed quis lectus vitae orci fermentum vehicula. In hac habitasse platea dictumst. Nulla facilisi. Suspendisse potenti. Vivamus at turpis sit amet nulla egestas scelerisque.</p>
-        <h2>Seção 3</h2>
-        <p>Maecenas at nulla ac augue facilisis faucibus. Donec volutpat dapibus libero, at malesuada justo elementum in. Ut consequat lacus et libero pharetra, ac egestas justo tristique.</p>
-    </div>
-    
+    <button id="selected.pro">Enviar informações de produto visto</button>
+    <button id="added.cart">Produto Adicionado ao Carrinho</button>
+    <button id="added.payment">Adicionar informações de pagamento</button>
     <script>
-        document.getElementById('botao1').addEventListener('click', function() {
-            console.log('Botão 1 clicado');
-            dataLayer.push({'event': 'botao1_clicado'});
+        document.getElementById("select.pro").addEventListener("click",function(){
+            console.log("Produto selecionado: FLAT CRISTAL 33");
+            gtag('event','view_item',{
+                coupon:"Matheusríssima",
+                value:150,
+                currency:'BRL',
+                items:[{
+                    item_id:'123456',
+                    item_name:'FLAT CRISTAL 33',
+                    coupon:"Matheusríssima",
+                    price:150
+                }]
+            });
         });
-    document.getElementById('botao3').addEventListener('click', function() {
-            console.log('Botão 3 clicado');
-            window.dataLayer.push({
-  event: "add_to_cart",
-  ecommerce: {
-    currency: "BRL",
-    value: 150.00,
-    items: [
-      {
-        item_name: "FLAT RASTEIRISSIMA",
-        item_id: "00000001",
-        price: 150.00,
-        quantity: 2
-      }
-    ]
-  }
-});
+        document.getElementById("added.cart").addEventListener("click",function(){
+            console.log("Adicionado pagamento")
+            gtag('event','add_payment_info',{
+                value:150,
+                payment_type:'PIX',
+                items:[{
+                    item_id:'123456',
+                    item_name:'FLAT CRISTAL 33',
+                    coupon:"Matheusríssima",
+                    price:150
+                }]
+            });
         });
-        document.getElementById('botao2').addEventListener('click', function() {
-            console.log('Botão 2 clicado');
-            dataLayer.push({'event': 'formulario_enviado'});
+        document.getElementById("added.payment").addEventListener("click",function(){
+            console.log("Adicionando ao carrinho");
+            gtag('event','add_to_cart',{
+                coupon:"Matheusríssima",
+                value:150,
+                currency:'BRL',
+                items:[{
+                    item_id:'123456',
+                    item_name:'FLAT CRISTAL 33',
+                    coupon:"Matheusríssima",
+                    price:150
+                }]
+            });
         });
     </script>
 </body>
