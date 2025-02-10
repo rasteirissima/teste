@@ -9,58 +9,60 @@
         gtag('js', new Date());
 
         // Substitua G-XXXXXXXXXX pelo seu ID de medição
-        gtag('config', 'G-XMX0H8WZK7',{'debug_mode':true});
+        gtag('config', 'G-XMX0H8WZK7');
         </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TESTE GTAG</title>
 </head>
 <body>
-    <button id="selected.pro">Enviar informações de produto visto</button>
-    <button id="added.cart">Produto Adicionado ao Carrinho</button>
-    <button id="added.payment">Adicionar informações de pagamento</button>
+    <button id="selected_pro">Enviar informações de produto visto</button>
+<button id="added_cart">Produto Adicionado ao Carrinho</button>
+<button id="added_payment">Adicionar informações de pagamento</button>
     <script>
-        document.getElementById("select.pro").addEventListener("click",function(){
-            console.log("Produto selecionado: FLAT CRISTAL 33");
-            gtag('event','view_item',{
-                coupon:"Matheusríssima",
-                value:150,
-                currency:'BRL',
-                items:[{
-                    item_id:'123456',
-                    item_name:'FLAT CRISTAL 33',
-                    coupon:"Matheusríssima",
-                    price:150
-                }]
-            });
-        });
-        document.getElementById("added.cart").addEventListener("click",function(){
-            console.log("Adicionado pagamento")
-            gtag('event','add_payment_info',{
-                value:150,
-                payment_type:'PIX',
-                items:[{
-                    item_id:'123456',
-                    item_name:'FLAT CRISTAL 33',
-                    coupon:"Matheusríssima",
-                    price:150
-                }]
-            });
-        });
-        document.getElementById("added.payment").addEventListener("click",function(){
-            console.log("Adicionando ao carrinho");
-            gtag('event','add_to_cart',{
-                coupon:"Matheusríssima",
-                value:150,
-                currency:'BRL',
-                items:[{
-                    item_id:'123456',
-                    item_name:'FLAT CRISTAL 33',
-                    coupon:"Matheusríssima",
-                    price:150
-                }]
-            });
-        });
+       document.getElementById("selected_pro").addEventListener("click", function() {
+    console.log("Produto selecionado: FLAT CRISTAL 33");
+    gtag('event', 'view_item', {
+        coupon: "Matheusríssima",
+        value: 150,
+        currency: 'BRL',
+        items: [{
+            item_id: '123456',
+            item_name: 'FLAT CRISTAL 33',
+            coupon: "Matheusríssima",
+            price: 150
+        }]
+    });
+});
+
+document.getElementById("added_cart").addEventListener("click", function() {
+    console.log("Adicionando ao carrinho");
+    gtag('event', 'add_to_cart', {
+        coupon: "Matheusríssima",
+        value: 150,
+        currency: 'BRL',
+        items: [{
+            item_id: '123456',
+            item_name: 'FLAT CRISTAL 33',
+            coupon: "Matheusríssima",
+            price: 150
+        }]
+    });
+});
+
+document.getElementById("added_payment").addEventListener("click", function() {
+    console.log("Adicionado pagamento");
+    gtag('event', 'add_payment_info', {
+        value: 150,
+        payment_type: 'PIX',
+        items: [{
+            item_id: '123456',
+            item_name: 'FLAT CRISTAL 33',
+            coupon: "Matheusríssima",
+            price: 150
+        }]
+    });
+});
     </script>
 </body>
 </html>
